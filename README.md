@@ -7,7 +7,7 @@
 
 > Turn any repository into an open-source-ready, professional repo in one command.
 
-Repo Doctor scans your Git repository, scores it against 17 open-source best-practice rules, and auto-generates any missing files — README, LICENSE, CI workflow, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY policy, and .gitignore — without ever touching your source code.
+Repo Doctor scans your Git repository, scores it against 17 open-source best-practice rules, and auto-generates any missing files including README, LICENSE, CI workflow, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY policy, and .gitignore, without ever touching your source code.
 
 ## Demo
 
