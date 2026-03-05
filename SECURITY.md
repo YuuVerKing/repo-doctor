@@ -4,7 +4,7 @@
 
 If you discover a security vulnerability in Repo Doctor, please report it responsibly.
 
-Please report vulnerabilities through [GitHub private security advisories](https://github.com/JasperLiu1999/repo-doctor/security/advisories/new) to avoid public disclosure before a fix is available.
+Please report vulnerabilities through [GitHub private security advisories](https://github.com/JaaasperLiu/repo-doctor/security/advisories/new) to avoid public disclosure before a fix is available.
 
 Include:
 

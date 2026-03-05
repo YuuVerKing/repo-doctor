@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://pypi.org/project/repo-doctor/"><img src="https://img.shields.io/pypi/v/repo-doctor" alt="PyPI version"></a>
-  <a href="https://github.com/JasperLiu1999/repo-doctor/actions/workflows/ci.yml"><img src="https://github.com/JasperLiu1999/repo-doctor/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://github.com/JaaasperLiu/repo-doctor/actions/workflows/ci.yml"><img src="https://github.com/JaaasperLiu/repo-doctor/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <a href="https://pypi.org/project/repo-doctor/"><img src="https://img.shields.io/pypi/pyversions/repo-doctor" alt="Python versions"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
 </p>
@@ -33,9 +33,9 @@ uv tool install repo-doctor
 <summary>Development install (from source)</summary>
 
 ```bash
-pipx install git+https://github.com/JasperLiu1999/repo-doctor.git
+pipx install git+https://github.com/JaaasperLiu/repo-doctor.git
 # or
-uv tool install git+https://github.com/JasperLiu1999/repo-doctor.git
+uv tool install git+https://github.com/JaaasperLiu/repo-doctor.git
 ```
 
 </details>
@@ -186,7 +186,7 @@ Add Repo Doctor to your GitHub Actions workflow:
 
 ```yaml
 - name: Repo Doctor
-  uses: JasperLiu1999/repo-doctor/action@v0
+  uses: JaaasperLiu/repo-doctor/action@v0
   with:
     strict: true  # fail the build if issues are found
 ```
@@ -196,7 +196,7 @@ The action posts the full report to the GitHub Actions summary and exports `scor
 ```yaml
 - name: Repo Doctor
   id: doctor
-  uses: JasperLiu1999/repo-doctor/action@v0
+  uses: JaaasperLiu/repo-doctor/action@v0
 
 - name: Check score
   run: echo "Score is ${{ steps.doctor.outputs.score }}"
@@ -215,7 +215,7 @@ The action posts the full report to the GitHub Actions summary and exports `scor
 ## Development
 
 ```bash
-git clone https://github.com/JasperLiu1999/repo-doctor.git
+git clone https://github.com/JaaasperLiu/repo-doctor.git
 cd repo-doctor
 uv sync --dev
 uv run pytest -x -v        # run tests (79 tests)

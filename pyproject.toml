@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "repo-doctor"
-version = "0.1.0"
+version = "0.1.1"
 description = "Turn any repository into an open-source-ready, professional repo in one command."
 readme = "README.md"
 license = "MIT"
@@ -29,6 +29,12 @@ dependencies = [
     "pydantic>=2.0.0",
     "pyyaml>=6.0",
 ]
+
+[project.urls]
+Homepage = "https://github.com/JaaasperLiu/repo-doctor"
+Repository = "https://github.com/JaaasperLiu/repo-doctor"
+Issues = "https://github.com/JaaasperLiu/repo-doctor/issues"
+Changelog = "https://github.com/JaaasperLiu/repo-doctor/releases"
 
 [project.scripts]
 repo-doctor = "repo_doctor.cli:app"

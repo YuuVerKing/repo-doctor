@@ -1,6 +1,6 @@
 name: "Repo Doctor"
 description: "Scan your repository for open-source readiness and post a health score."
-author: "JasperLiu1999"
+author: "JaaasperLiu"
 
 branding:
   icon: "heart"
@@ -44,7 +44,7 @@ runs:
 
     - name: Install repo-doctor
       shell: bash
-      run: uv tool install git+https://github.com/JasperLiu1999/repo-doctor.git
+      run: uv tool install git+https://github.com/JaaasperLiu/repo-doctor.git
 
     - name: Run scan
       id: scan
