@@ -1,11 +1,15 @@
-# Repo Doctor
+<p align="center">
+  <img src="poster.png" alt="Repo Doctor" width="600">
+</p>
 
-[![PyPI version](https://img.shields.io/pypi/v/repo-doctor)](https://pypi.org/project/repo-doctor/)
-[![CI](https://github.com/JasperLiu1999/repo-doctor/actions/workflows/ci.yml/badge.svg)](https://github.com/JasperLiu1999/repo-doctor/actions/workflows/ci.yml)
-[![Python versions](https://img.shields.io/pypi/pyversions/repo-doctor)](https://pypi.org/project/repo-doctor/)
-[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+<p align="center">
+  <a href="https://pypi.org/project/repo-doctor/"><img src="https://img.shields.io/pypi/v/repo-doctor" alt="PyPI version"></a>
+  <a href="https://github.com/JasperLiu1999/repo-doctor/actions/workflows/ci.yml"><img src="https://github.com/JasperLiu1999/repo-doctor/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
+  <a href="https://pypi.org/project/repo-doctor/"><img src="https://img.shields.io/pypi/pyversions/repo-doctor" alt="Python versions"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
+</p>
 
-> Turn any repository into an open-source-ready, professional repo in one command.
+<p align="center"><em>Turn any repository into an open-source-ready, professional repo in one command.</em></p>
 
 Repo Doctor scans your Git repository, scores it against 17 open-source best-practice rules, and auto-generates any missing files including README, LICENSE, CI workflow, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY policy, and .gitignore, without ever touching your source code.
 
