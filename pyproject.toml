@@ -30,6 +30,9 @@ dependencies = [
     "pyyaml>=6.0",
 ]
 
+[project.optional-dependencies]
+gui = ["streamlit>=1.30.0"]
+
 [project.urls]
 Homepage = "https://github.com/JaaasperLiu/repo-doctor"
 Repository = "https://github.com/JaaasperLiu/repo-doctor"

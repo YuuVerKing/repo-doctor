@@ -22,12 +22,26 @@ Repo Doctor scans your Git repository, scores it against 17 open-source best-pra
 ## Install
 
 ```bash
-# From PyPI (recommended)
-pipx install repo-doctor
-
-# Or with uv
-uv tool install repo-doctor
+pip install repo-doctor
 ```
+
+<details>
+<summary>More install methods</summary>
+
+```bash
+# If the command isn't on PATH after pip install:
+python -m repo_doctor scan .
+
+# Recommended: install as an isolated tool
+pipx install repo-doctor
+# or
+uv tool install repo-doctor
+
+# No Python? Download a standalone binary from
+# https://github.com/JaaasperLiu/repo-doctor/releases
+```
+
+</details>
 
 <details>
 <summary>Development install (from source)</summary>
@@ -148,6 +162,14 @@ repo-doctor init [PATH]     Create a .repo-doctor.yml config
 | `--skip RULE` | Skip specific rule(s) |
 | `--license` | License type: `mit` (default) or `apache-2.0` |
 | `--output-dir`, `-o` | Output directory for reports (default: repo root) |
+
+## Web GUI (optional)
+
+```bash
+pip install repo-doctor[gui]
+streamlit run gui/app.py
+# Opens http://localhost:8501
+```
 
 ## Output files
 
