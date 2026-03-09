@@ -22,20 +22,22 @@ Repo Doctor scans your Git repository, scores it against 17 open-source best-pra
 ## Install
 
 ```bash
-pip install repo-doctor
+# macOS / Linux
+brew install pipx && pipx install repo-doctor
+
+# or with uv (faster)
+uv tool install repo-doctor
 ```
 
 <details>
 <summary>More install methods</summary>
 
 ```bash
-# If the command isn't on PATH after pip install:
-python -m repo_doctor scan .
+# pip (inside a venv or with --user)
+pip install repo-doctor
 
-# Recommended: install as an isolated tool
-pipx install repo-doctor
-# or
-uv tool install repo-doctor
+# If the command isn't on PATH after install:
+python -m repo_doctor scan .
 
 # No Python? Download a standalone binary from
 # https://github.com/JaaasperLiu/repo-doctor/releases
